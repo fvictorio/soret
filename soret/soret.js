@@ -31,3 +31,31 @@ Soret.load_level = function(level) {
 Soret.load_next_level = function() {
     Soret.load_level(Soret._current_level + 1);
 };
+
+Soret.compare = function(a, b) {
+    var lright, wrong, rright;
+    var la, lb, ra, rb;
+
+    la = 0; 
+    lb = 0;
+    ra = a.length - 1;
+    rb = b.length - 1;
+
+    while (true) {
+        if (la > ra || lb > rb) break;
+        if (a[la] != b[lb]) break;
+        la++; lb++;
+    }
+
+    while (true) {
+        if (ra <= la || rb <= lb) break;
+        if (a[ra] != b[rb]) break;
+        ra--; rb--;
+    }
+
+    lright = b.substring(0, lb);
+    wrong = b.substring(lb, rb + 1);
+    rright = b.substring(rb + 1);
+
+    return [lright, wrong, rright];
+};

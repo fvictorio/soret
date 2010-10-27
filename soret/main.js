@@ -31,7 +31,12 @@ $(document).ready(function() {
             console.log("Yes!");
         } else {
             $("#result").show();
-            $("#wrongOutput").text(user_output);
+
+            var result = Soret.compare(expected_output, user_output);
+
+            $("#left_right").text(result[0]);
+            $("#wrong").text(result[1]);
+            $("#right_right").text(result[2]);
 
             console.log("Not!");
         }

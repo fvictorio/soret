@@ -2,4 +2,11 @@ pre {
     background: #eef;
     margin: 20px;
 }
-
+.right
+{
+    background: #efe;
+}
+.wrong
+{
+    background: #fdd;
+}
